@@ -1,4 +1,3 @@
-# Setiap git push ke branch main: bangun situs statis dan terbitkan ke GitHub Pages.
 name: Deploy ke GitHub Pages
 on:
   push:
@@ -25,7 +24,6 @@ jobs:
       - run: npm install
       - run: npm run build
         env:
-          # tiga nilai ini diisi di Settings > Secrets and variables > Actions > Variables
           NEXT_PUBLIC_SUPABASE_URL: ${{ vars.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ vars.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           NEXT_PUBLIC_EMAIL_DOMAIN: ${{ vars.NEXT_PUBLIC_EMAIL_DOMAIN }}
